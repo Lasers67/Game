@@ -8,7 +8,19 @@
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="1" onclick="remove(this.id)" /><br />
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="2" onclick="remove(this.id)"/><br />
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="3" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="4" onclick="remove(this.id)"/><br /><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="4" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="5" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="6" onclick="remove(this.id)" /><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="7" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="8" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="9" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="10" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="11" onclick="remove(this.id)" /><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="12" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="13" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="14" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="15" onclick="remove(this.id)"/><br />
+<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="16" onclick="remove(this.id)"/><br />
 <script type="text/javascript">
 	var First = "1";
 	var Second = "2";
@@ -21,6 +33,9 @@
 		{
 			var element = document.getElementById(First);
 			element.parentNode.removeChild(element);
+			First++;
+			Second++;
+			Third++;
 		}	
 		else if(current_element==Second)
 		{
@@ -28,6 +43,12 @@
 			element.parentNode.removeChild(element);
 			var element2 = document.getElementById(Second);
 			element2.parentNode.removeChild(element2);
+			for(i=0;i<2;i++)
+			{
+				First++;
+				Second++;
+				Third++;
+			}
 		}
 		else if(current_element==Third)
 		{
@@ -36,7 +57,13 @@
 			var element2 = document.getElementById(Second);
 			element2.parentNode.removeChild(element2);
 			var element3 = document.getElementById(Third);
-			element3.parentNode.removeChild(element3);	
+			element3.parentNode.removeChild(element3);
+			for(i=0;i<3;i++)
+			{
+				First++;
+				Second++;
+				Third++;	
+			}	
 		}
 	}
 </script>
