@@ -16,7 +16,28 @@
 	var current_element
 	function remove(elementclicked)
 	{
-			
+		current_element=elementclicked;
+		if(current_element==First)
+		{
+			var element = document.getElementById(First);
+			element.parentNode.removeChild(element);
+		}	
+		else if(current_element==Second)
+		{
+			var element = document.getElementById(First);
+			element.parentNode.removeChild(element);
+			var element2 = document.getElementById(Second);
+			element2.parentNode.removeChild(element2);
+		}
+		else if(current_element==Third)
+		{
+			var element = document.getElementById(First);
+			element.parentNode.removeChild(element);
+			var element2 = document.getElementById(Second);
+			element2.parentNode.removeChild(element2);
+			var element3 = document.getElementById(Third);
+			element3.parentNode.removeChild(element3);	
+		}
 	}
 </script>
 </body>
