@@ -2,26 +2,30 @@
 <html>
 <head>
 	<title></title>
-	<style type="text/css"></style>
+	<style type="text/css">
+	
+	</style>
 </head>
 <body>
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="1" onclick="remove(this.id)" /><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="2" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="3" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="4" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="5" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="6" onclick="remove(this.id)" /><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="7" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="8" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="9" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="10" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="11" onclick="remove(this.id)" /><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="12" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="13" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="14" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="15" onclick="remove(this.id)"/><br />
-<img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="16" onclick="remove(this.id)"/><br />
-<p id="RESULT"></p>
+<div class="balls">
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="1" onclick="remove(this.id)" /><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="2" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="3" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="4" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="5" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="6" onclick="remove(this.id)" /><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="7" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="8" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="9" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="10" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="11" onclick="remove(this.id)" /><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="12" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="13" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="14" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="15" onclick="remove(this.id)"/><br />
+	<img src="C:\Users\Lasers67\Desktop\Game\smallbal.jpg" width="30" height="30" id="16" onclick="remove(this.id)"/><br />
+</div>
+<p id="RESULT"></p><p id="Move">UP</p>
 <script type="text/javascript">
 	var First = "1";
 	var Second = "2";
@@ -34,6 +38,7 @@
 	var balls_counter=16;
 	function remove(elementclicked)
 	{
+		move();
 		current_element=elementclicked;
 		if(current_element==First && click_counter%2==0)
 		{
@@ -122,7 +127,16 @@
 		if(balls_counter==0)
 		{
 			winner();
+			document.getElementById("Move").innerHTML="GAMEOVER";
 		}
+	}
+	function move()
+	{
+		if(click_counter%2==0)
+			document.getElementById("Move").innerHTML="DOWN";
+		else if(click_counter%2!=0)
+			document.getElementById("Move").innerHTML="UP";
+			
 	}
 	function winner()
 	{
