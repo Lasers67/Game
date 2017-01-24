@@ -14,9 +14,9 @@
 			width: 110px;
 			height: 33px;
 			border-radius: 200px;
-			border: 2px solid black;
+			border: 3px solid gray;
 			text-align: center;
-			box-shadow: 1px 2px 3px;
+			box-shadow: 1px 2px 3px #000;
 		}
 		.button:hover{
 			box-shadow: 0px 5px 10px;
@@ -32,6 +32,69 @@
 			top:48%;
 			left: 190px;
 		}
+		#upArr {
+			position: absolute;
+			left: 1000px;
+			top: 400px;
+		}
+		#downArr {
+			position: absolute;
+			left: 1000px;
+			top: 145px;
+		}
+		#gameover{
+			position: absolute;
+			color: white;
+			top:15px;
+			left: 575px;	
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+			font-family: "Comic Sans MS", cursive, sans-serif;
+		}
+#Reset{
+			position: absolute;
+			width: 110px;
+			top: 160px;
+			left:-130px;
+			height: 110px;	
+			border-radius: 5px;
+			box-shadow: 2px 2px #999;
+			background-color: red;	 
+			text-align: center;
+			font-family:"Comic Sans MS", cursive, sans-serif;
+			font-size: 15px;
+			color: white;
+			border: 1px solid black;	 
+		
+		}
+#Reset:active{
+         transform: rotate(1deg);
+}
+		#Readme{
+			position: absolute;	
+			width: 110px;
+			top: 320px;
+			left:-130px;
+			height: 110px;	
+			border-radius: 5px;
+			background-color: red;
+			box-shadow: 2px 2px #999;
+			text-align: center;
+			font-family:"Comic Sans MS", cursive, sans-serif;
+			font-size: 15px;
+			color: white;
+			border: 1px solid black;	
+		}
+		#Readme:active{
+         transform: rotate(1deg);
+}
+#chance{position: absolute;
+	top: 5px;
+	left: 378px;
+	font-size: 24px;
+}
+
 	</style>
 </head>
 <body bgcolor="white">
@@ -54,10 +117,15 @@
 	<input type="button" id="14" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
 	<input type="button" id="15" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
 	<input type="button" id="16" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" value="NEW GAME" onclick="New_game()" class="buttons" id="Reset"/>
+	<input type="button" value="RULES" onclick="" class="rules" id="Readme"/>
 	</form>
+	<p id="chance">TURN</p>
+	<p class="Rules"></p>
 </div>
-<p id="RESULT"></p><p id="Move">Turn player:-UP</p><br />
-<button onclick="help()">HELP</button>
+<img src="C:\Users\Lasers67\Desktop\arrow.png" id="downArr" width="180" height="180" /><img src="C:\Users\Lasers67\Desktop\arrow2.png" id="upArr" width="180" height="180" /><br />
+<p id="gameover"></p>
+
 <script type="text/javascript">
 	var First = "1";
 	var Second = "2";
@@ -68,13 +136,8 @@
 	var current_element;
 	var click_counter=0;
 	var balls_counter=16;
-	function help()
-	{
-		alert("The player alternately removes 1,2 or 3 balls from the row The player who finally removes all the balls wins")
-	}
 	function remove(elementclicked)
 	{
-		move();
 		current_element=elementclicked;
 		if(current_element==First && click_counter%2==0)
 		{
@@ -160,26 +223,41 @@
 			click_counter++;
 			balls_counter-=3;
 		}
-		if(balls_counter==0)
-		{
-			winner();
-			document.getElementById("Move").innerHTML="GAMEOVER";
-		}
+		move();
+		
 	}
 	function move()
 	{
-		if(click_counter%2==0)
-			document.getElementById("Move").innerHTML="Turn player:-DOWN";
-		else if(click_counter%2!=0)
-			document.getElementById("Move").innerHTML="Turn player:-UP";
+		if(click_counter%2==0 && balls_counter!=0)
+		{
+			document.getElementById("upArr").style.opacity="0.1";
+			document.getElementById("downArr").style.opacity="1";
+		}
+		else if(click_counter%2!=0 && balls_counter!=0)
+		{
+			document.getElementById("upArr").style.opacity="1";
+			document.getElementById("downArr").style.opacity="0.1";
+		}
+		else if(balls_counter==0)
+		{
+			document.getElementById("downArr").style.opacity="0.1";
+			document.getElementById("upArr").style.opacity="0.1";
+			if(click_counter%2==0)
+			{
+				document.getElementById("gameover").innerHTML="Green Wins"
+				document.getElementById("gameover").style.color="green";	
+			}
+			else if(click_counter%2!=0)
+			{
+				document.getElementById("gameover").innerHTML="Red Wins";
+				document.getElementById("gameover").style.color="Red";	
+			}	
+		}
 			
 	}
-	function winner()
+	function onload()
 	{
-		if(balls_counter==0 && click_counter%2==0)
-			document.getElementById("RESULT").style.="DOWN Player Wins";
-		else if(balls_counter==0 && click_counter%2!=0)
-			document.getElementById("RESULT").innerHTML="UP Player Wins";
+		document.getElementById("upArr").style.opacity="0.1";
 	}
 	function hover(elemente)
 	{
@@ -215,6 +293,17 @@
 			if(elemente==Last)
 				document.getElementById(elemente).style.background="green";
 		}
+	}
+	onload();
+	function backtoNormal()
+	{
+		var x=document.getElementsByClassName("button");
+		for(i=0;i<x.length;i++)
+			x[i].style.backgroundColor="yellow";
+	}
+	function New_game()
+	{
+	  location.reload();
 	}
 </script>
 </body>
