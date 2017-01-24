@@ -21,23 +21,41 @@
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="14" onclick="remove(this.id)"/><br />
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="15" onclick="remove(this.id)"/><br />
 <img src="C:\Users\Lasers67\Desktop\87f7be4e140c4ed2a936b655d8401e04.jpg" width="30" height="30" id="16" onclick="remove(this.id)"/><br />
+<p id="RESULT"></p>
 <script type="text/javascript">
 	var First = "1";
 	var Second = "2";
 	var Third = "3";
-	var current_element
+	var Last="16";
+	var SecondLast="15";
+	var ThirdLast="14";
+	var current_element;
+	var click_counter=0;
+	var balls_counter=16;
 	function remove(elementclicked)
 	{
 		current_element=elementclicked;
-		if(current_element==First)
+		if(current_element==First && click_counter%2==0)
 		{
 			var element = document.getElementById(First);
 			element.parentNode.removeChild(element);
 			First++;
 			Second++;
 			Third++;
-		}	
-		else if(current_element==Second)
+			click_counter++;
+			balls_counter--;
+		}
+		else if(current_element==Last && click_counter%2!=0)
+		{
+			var element = document.getElementById(Last);
+			element.parentNode.removeChild(element);
+			--Last;
+			--SecondLast;
+			--ThirdLast;
+			click_counter++;
+			balls_counter--;
+		}
+		else if(current_element==Second && click_counter%2==0)
 		{
 			var element = document.getElementById(First);
 			element.parentNode.removeChild(element);
@@ -49,8 +67,25 @@
 				Second++;
 				Third++;
 			}
+			click_counter++;
+			balls_counter-=2;
 		}
-		else if(current_element==Third)
+		else if(current_element==SecondLast && click_counter%2!=0)
+		{
+			var element = document.getElementById(Last);
+			element.parentNode.removeChild(element);
+			var element2 = document.getElementById(SecondLast);
+			element2.parentNode.removeChild(element2);
+			for(i=0;i<2;i++)
+			{
+				--Last;
+				--SecondLast;
+				--ThirdLast;		
+			}
+			click_counter++;
+			balls_counter-=2;
+		}
+		else if(current_element==Third && click_counter%2==0)
 		{
 			var element = document.getElementById(First);
 			element.parentNode.removeChild(element);
@@ -63,8 +98,38 @@
 				First++;
 				Second++;
 				Third++;	
-			}	
+			}
+			click_counter++;
+			balls_counter-=3;	
 		}
+		else if(current_element==ThirdLast && click_counter%2!=0)
+		{
+			var element = document.getElementById(Last);
+			element.parentNode.removeChild(element);
+			var element2 = document.getElementById(SecondLast);
+			element2.parentNode.removeChild(element2);
+			var element3 = document.getElementById(ThirdLast);
+			element3.parentNode.removeChild(element3);
+			for(i=0;i<3;i++)
+			{
+				--Last;
+				--SecondLast;
+				--ThirdLast;	
+			}	
+			click_counter++;
+			balls_counter-=3;
+		}
+		if(balls_counter==0)
+		{
+			winner();
+		}
+	}
+	function winner()
+	{
+		if(balls_counter==0 && click_counter%2==0)
+			document.getElementById("RESULT").innerHTML="DOWN Player Wins";
+		else if(balls_counter==0 && click_counter%2!=0)
+			document.getElementById("RESULT").innerHTML="UP Player Wins";
 	}
 </script>
 </body>
