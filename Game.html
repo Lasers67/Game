@@ -9,10 +9,11 @@
 			left: 44%;
 		}
 		.button{
-			background-color: #4CAF50;
+			background-color: yellow;
 			position: absolute;
 			width: 110px;
-			height: 32px;
+			height: 33px;
+			border-radius: 200px;
 			border: 2px solid black;
 			text-align: center;
 			box-shadow: 1px 2px 3px;
@@ -20,28 +21,39 @@
 		.button:hover{
 			box-shadow: 0px 5px 10px;
 		}
-		
+		hr{
+			height: 6px;
+			border-radius: 50px;
+			background-color: gray;
+			border:0px solid red;
+			box-shadow: 1px 1px 0px;
+			width: 500px;
+			position: absolute;
+			top:48%;
+			left: 190px;
+		}
 	</style>
 </head>
-<body bgcolor="blue">
+<body bgcolor="white">
 <div class="balls">
 <form>
-	<input type="button" id="1"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="2"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="3"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="4"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="5"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="6"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="7"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="8"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="9"  class="button" value="Click Me!" onmouseover="hover(this.id)" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="10" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="11" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="12" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="13" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="14" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="15" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="16" class="button" value="Click Me!" onmouseover="hover(this.id)"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="1"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="2"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="3"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="4"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="5"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="6"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="7"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="8"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<hr />
+	<input type="button" id="9"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="10" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="11" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="12" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="13" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="14" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="15" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="16" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
 	</form>
 </div>
 <p id="RESULT"></p><p id="Move">Turn player:-UP</p><br />
@@ -165,7 +177,7 @@
 	function winner()
 	{
 		if(balls_counter==0 && click_counter%2==0)
-			document.getElementById("RESULT").innerHTML="DOWN Player Wins";
+			document.getElementById("RESULT").style.="DOWN Player Wins";
 		else if(balls_counter==0 && click_counter%2!=0)
 			document.getElementById("RESULT").innerHTML="UP Player Wins";
 	}
@@ -176,16 +188,16 @@
 			if(elemente==Third)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente--).style.background="rgba(255,0,0,0.6)";
+				document.getElementById(elemente--).style.background="red";
 			}
 			if(elemente==Second)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente--).style.background="rgba(255,0,0,0.6)";
+				document.getElementById(elemente--).style.background="red";
 			}
 			if(elemente==First)
 			{
-				document.getElementById(elemente).style.background="rgba(255,0,0,0.6)";
+				document.getElementById(elemente).style.background="red";
 			}
 		}
 		else if(click_counter%2!=0)
@@ -193,15 +205,15 @@
 			if(elemente==ThirdLast)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente++).style.background="rgba(255,0,0,0.9)";
+				document.getElementById(elemente++).style.background="green";
 			}
 			if(elemente==SecondLast)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente++).style.background="rgba(255,0,0,0.9)";
+				document.getElementById(elemente++).style.background="green";
 			}
 			if(elemente==Last)
-				document.getElementById(elemente).style.background="rgba(255,0,0,0.9)";
+				document.getElementById(elemente).style.background="green";
 		}
 	}
 </script>
