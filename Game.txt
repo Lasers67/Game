@@ -1,0 +1,2 @@
+The player alternately removes 1,2 or 3 balls from the row
+The player who finally removes all the balls wins
