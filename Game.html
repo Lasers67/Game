@@ -5,12 +5,13 @@
 	<style type="text/css">
 		body{
 			background-color: #e1e3e3;
+			font-family: "Lato", sans-serif	;	
 		}
 		
 		.button{
-			background-color: yellow;
+			background-color: #eae436;
 			position:absolute;
-			margin: 4% 44%;
+			margin: 3.4% 44%;
 			border-radius: 200px;
 			border: 3px solid gray;
 			box-shadow: 1px 2px 3px #000;
@@ -33,7 +34,7 @@
 		#upArr {
 			position: absolute;
 			left: 65%;
-			top: 58%;
+			top: 57.8%;
 			width: 11.56%;
 			height: 24.3%;
 		}
@@ -46,26 +47,25 @@
 		}
 		#gameover{
 			position: absolute;
-			color: white;
-			top:15px;
-			left: 575px;	
+			top:5%;
+			left: 38%;	
 			font-size: 48px;
 			font-weight: bold;
 			text-align: center;
-			font-family: "Comic Sans MS", cursive, sans-serif;
 		}
 #Reset{
+			font-size: 15px;
 			position: absolute;
 			top: 28%;
 			left:35.2%;
 			border-radius: 5px;
-			box-shadow: 2px 2px #999;
-			background-color: red;	 
+			box-shadow: 2px 2px #999	;
+			background-color: #0a93ac;	 
+			padding: 20px 13px;
 			text-align: center;
-			font-family:"Comic Sans MS", cursive, sans-serif;
-			font-size: 15px;
 			color: white;
-			border: 1px solid black;	 
+			border: 1px solid black;
+			cursor:pointer;	 
 		
 		}
 #Reset:active{
@@ -76,24 +76,50 @@
 			top: 55.2%;
 			left:35.2%;		
 			border-radius: 5px;
-			background-color: gray;
+			background-color: #0a93ac;
 			box-shadow: 2px 2px #999;
-			text-align: center;
-			font-family:"Comic Sans MS", cursive, sans-serif;
 			font-size: 15px;
 			color: white;
-			border: 1px solid black;	
+			border: 1px solid black;
+			padding: 20px 20px;	
+			cursor:pointer;
 		}
 		#Readme:active{
          transform: rotate(1deg);
-}
+}	
 #chance{position: absolute;
-	top: 3%;
-	left: 68.3%;
+	top: 42.9%;
+	left: 67%;
+	font-weight: bold;
+	background-color: #2e2f2f;
+	border: 5px solid grey;
+	border-radius: 30%;
+	box-shadow: 3px 5px 9px #000;
+	padding: 0.45% 1%;
+	letter-spacing: 1px;
+	color: #c1c4c6;	 
 	font-size: 24px;
-}
+	cursor: default;
 
+}
+#description{
+	position: absolute;
+	top:40%;
+	left: 3%;	
+	width: 30%;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+}
+h2{
+	position: absolute;
+	top:33.5%;
+	left: 3%;	
+	width: 30%;
+	text-align: center;
+}
 	</style>
+
 </head>
 <body>
 <div class="balls">
@@ -117,13 +143,14 @@
 	</form>
 </div>
 <hr />
-<form><input type="button" value="NEW GAME" onclick="New_game()" class="buttons" style="width: 7.23%;height:15%;" id="Reset"/>
-<input type="button" value="RULES" onclick="" class="rules" style="width: 7.23%;height:15%;" id="Readme"/></form>
+<form><input type="button" value="NEW" onclick="New_game()" class="buttons" style="width: 7.23%;height:15%;" id="Reset" title="New Game" />
+<input type="button" value="RULES" onclick="display_rules()" class="rules" style="width: 7.23%;height:15%;" id="Readme" title="View Rules" /></form>
 <p id="chance">TURN</p>
 	<p class="Rules"></p>
 <img src="C:\Users\Lasers67\Desktop\arrow.png" id="downArr"  /><img src="C:\Users\Lasers67\Desktop\arrow2.png" id="upArr"  /><br />
 <p id="gameover"></p>
-
+<p id="description"></p>
+<h2 id="head"></h2>
 <script type="text/javascript">
 	var First = "1";
 	var Second = "2";
@@ -243,12 +270,12 @@
 			if(click_counter%2==0)
 			{
 				document.getElementById("gameover").innerHTML="Green Wins"
-				document.getElementById("gameover").style.color="green";	
+				document.getElementById("gameover").style.color="#4cc368";	
 			}
 			else if(click_counter%2!=0)
 			{
 				document.getElementById("gameover").innerHTML="Red Wins";
-				document.getElementById("gameover").style.color="Red";	
+				document.getElementById("gameover").style.color="#d46951";	
 			}	
 		}
 			
@@ -264,16 +291,16 @@
 			if(elemente==Third)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente--).style.background="#f62007";
+				document.getElementById(elemente--).style.background="#d46951";
 			}
 			if(elemente==Second)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente--).style.background="#f62007";
+				document.getElementById(elemente--).style.background="#d46951";
 			}
 			if(elemente==First)
 			{
-				document.getElementById(elemente).style.background="#f62007";
+				document.getElementById(elemente).style.background="#d46951";
 			}
 		}
 		else if(click_counter%2!=0)
@@ -281,15 +308,15 @@
 			if(elemente==ThirdLast)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente++).style.background="#1dfb06";
+				document.getElementById(elemente++).style.background="#4cc368";
 			}
 			if(elemente==SecondLast)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente++).style.background="#1dfb06";
+				document.getElementById(elemente++).style.background="#4cc368";
 			}
 			if(elemente==Last)
-				document.getElementById(elemente).style.background="#1dfb06";
+				document.getElementById(elemente).style.background="#4cc368";
 		}
 	}
 	onload();
@@ -297,12 +324,18 @@
 	{
 		var x=document.getElementsByClassName("button");
 		for(i=0;i<x.length;i++)
-			x[i].style.backgroundColor="yellow";
+			x[i].style.backgroundColor="#eae436";
 	}
 	function New_game()
 	{
 	  location.reload();
 	}
+	function display_rules()
+	{
+		document.getElementById("description").innerHTML="Hello_World! Its Game Time!<br />The aim is to remove all bricks<br /> Each Player on his/her turn can remove<br />1,2 or 3 bricks at a time<br /> The player who removes the last brick(s) wins the game.";
+		document.getElementById("head").innerHTML="RULES";
+		
+	}
 </script>
-</body>
+</body>	
 </html>
