@@ -3,44 +3,46 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		.balls{
-			position: absolute;
-			top: 10%;
-			left: 44%;
+		body{
+			background-color: #e1e3e3;
 		}
+		
 		.button{
 			background-color: yellow;
-			position: absolute;
-			width: 110px;
-			height: 33px;
+			position:absolute;
+			margin: 4% 44%;
 			border-radius: 200px;
 			border: 3px solid gray;
-			text-align: center;
 			box-shadow: 1px 2px 3px #000;
 		}
 		.button:hover{
 			box-shadow: 0px 5px 10px;
 		}
+
 		hr{
-			height: 6px;
-			border-radius: 50px;
+			height: 1%;
+			border-radius: 4px;
 			background-color: gray;
 			border:0px solid red;
 			box-shadow: 1px 1px 0px;
-			width: 500px;
+			width:	30%;
 			position: absolute;
 			top:48%;
-			left: 190px;
+			left: 56%;
 		}
 		#upArr {
 			position: absolute;
-			left: 1000px;
-			top: 400px;
+			left: 65%;
+			top: 58%;
+			width: 11.56%;
+			height: 24.3%;
 		}
 		#downArr {
 			position: absolute;
-			left: 1000px;
-			top: 145px;
+			left: 65%;
+			top: 18%;
+			width: 11.56%;
+			height: 24.3%;
 		}
 		#gameover{
 			position: absolute;
@@ -54,10 +56,8 @@
 		}
 #Reset{
 			position: absolute;
-			width: 110px;
-			top: 160px;
-			left:-130px;
-			height: 110px;	
+			top: 28%;
+			left:35.2%;
 			border-radius: 5px;
 			box-shadow: 2px 2px #999;
 			background-color: red;	 
@@ -73,12 +73,10 @@
 }
 		#Readme{
 			position: absolute;	
-			width: 110px;
-			top: 320px;
-			left:-130px;
-			height: 110px;	
+			top: 55.2%;
+			left:35.2%;		
 			border-radius: 5px;
-			background-color: red;
+			background-color: gray;
 			box-shadow: 2px 2px #999;
 			text-align: center;
 			font-family:"Comic Sans MS", cursive, sans-serif;
@@ -90,40 +88,40 @@
          transform: rotate(1deg);
 }
 #chance{position: absolute;
-	top: 5px;
-	left: 378px;
+	top: 3%;
+	left: 68.3%;
 	font-size: 24px;
 }
 
 	</style>
 </head>
-<body bgcolor="white">
+<body>
 <div class="balls">
 <form>
-	<input type="button" id="1"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="2"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="3"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="4"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="5"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="6"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="7"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="8"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<hr />
-	<input type="button" id="9"  class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="10" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="11" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)" /><br /><br />
-	<input type="button" id="12" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="13" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="14" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="15" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" id="16" class="button" onmouseover="hover(this.id)" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
-	<input type="button" value="NEW GAME" onclick="New_game()" class="buttons" id="Reset"/>
-	<input type="button" value="RULES" onclick="" class="rules" id="Readme"/>
+	<input type="button" id="1"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="2"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="3"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="4"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="5"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="6"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="7"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="8"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="9"  class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()" onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="10" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="11" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)" /><br /><br />
+	<input type="button" id="12" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="13" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="14" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="15" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />
+	<input type="button" id="16" class="button" onmouseover="hover(this.id)" style="width: 7.8%;height:4.6%;" onmouseout="backtoNormal()"  onclick="remove(this.id)"/><br /><br />	
 	</form>
-	<p id="chance">TURN</p>
-	<p class="Rules"></p>
 </div>
-<img src="C:\Users\Lasers67\Desktop\arrow.png" id="downArr" width="180" height="180" /><img src="C:\Users\Lasers67\Desktop\arrow2.png" id="upArr" width="180" height="180" /><br />
+<hr />
+<form><input type="button" value="NEW GAME" onclick="New_game()" class="buttons" style="width: 7.23%;height:15%;" id="Reset"/>
+<input type="button" value="RULES" onclick="" class="rules" style="width: 7.23%;height:15%;" id="Readme"/></form>
+<p id="chance">TURN</p>
+	<p class="Rules"></p>
+<img src="C:\Users\Lasers67\Desktop\arrow.png" id="downArr"  /><img src="C:\Users\Lasers67\Desktop\arrow2.png" id="upArr"  /><br />
 <p id="gameover"></p>
 
 <script type="text/javascript">
@@ -266,16 +264,16 @@
 			if(elemente==Third)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente--).style.background="red";
+				document.getElementById(elemente--).style.background="#f62007";
 			}
 			if(elemente==Second)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente--).style.background="red";
+				document.getElementById(elemente--).style.background="#f62007";
 			}
 			if(elemente==First)
 			{
-				document.getElementById(elemente).style.background="red";
+				document.getElementById(elemente).style.background="#f62007";
 			}
 		}
 		else if(click_counter%2!=0)
@@ -283,15 +281,15 @@
 			if(elemente==ThirdLast)
 			{
 				for(i=0;i<3;i++)
-				document.getElementById(elemente++).style.background="green";
+				document.getElementById(elemente++).style.background="#1dfb06";
 			}
 			if(elemente==SecondLast)
 			{
 				for(i=0;i<2;i++)
-				document.getElementById(elemente++).style.background="green";
+				document.getElementById(elemente++).style.background="#1dfb06";
 			}
 			if(elemente==Last)
-				document.getElementById(elemente).style.background="green";
+				document.getElementById(elemente).style.background="#1dfb06";
 		}
 	}
 	onload();
